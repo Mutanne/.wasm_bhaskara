@@ -3,7 +3,7 @@ function calcula() {
   var b=document.getElementById("vb").value;
   var c=document.getElementById("vc").value;
   console.log(a,b,c)
-fetch('C:\wasm_bhaskara_3\out\main.wasm')
+fetch('main.wasm')
 .then(response => response.arrayBuffer()
 ).then(bytes => WebAssembly.instantiate(bytes)
 ).then(results => {
@@ -11,7 +11,7 @@ fetch('C:\wasm_bhaskara_3\out\main.wasm')
   document.getElementById("container").textContent = instance.exports.x1(a,b,c);
 }).catch(console.error);
 
-fetch('..\out\main.wasm')
+fetch('main.wasm')
 .then(response => response.arrayBuffer()
 ).then(bytes => WebAssembly.instantiate(bytes)
 ).then(results => {
